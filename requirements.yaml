@@ -1,0 +1,6 @@
+dependencies:
+  - name: postgresql
+    alias: caliber-quality-audit-postgres-service
+    version: 8.4.0
+    repository: https://kubernetes-charts.storage.googleapis.com
+    condition: caliber-quality-audit-postgres-service.enabled

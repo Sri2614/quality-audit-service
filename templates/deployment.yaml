@@ -10,11 +10,13 @@ spec:
     matchLabels:
       app.kubernetes.io/name: {{ include "quality-audit-service.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/app: {{ include "quality-audit-service.appname" . }}
   template:
     metadata:
       labels:
         app.kubernetes.io/name: {{ include "quality-audit-service.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/app: {{ include "quality-audit-service.appname" . }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
